@@ -91,7 +91,7 @@ class Game:
 
         while games_to_play <= 0:
             try:
-                games_to_play = int(input("How many games do you want to play? "))
+                games_to_play = int(input("How many games do you want to play?\n"))
             except ValueError:
                 print("You must enter a number.")
 
@@ -120,10 +120,10 @@ class Game:
 
             choice = ""
             while player_hand.get_value() < 21 and choice not in ["s", "stand"]:
-                choice = input("Please choose 'Hit' or 'Stand': ").lower()
+                choice = input("Please choose 'Hit' or 'Stand':\n").lower()
                 print()
                 while choice not in ["h", "s", "hit", "stand"]:
-                    choice = input("Please enter 'Hit' or 'Stand' (or H/S): ").lower()
+                    choice = input("Please enter 'Hit' or 'Stand' (or H/S):\n").lower()
                     print()
                 if choice in ["hit", "h"]:
                     player_hand.add_card(deck.deal(1))
