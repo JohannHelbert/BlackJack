@@ -1,13 +1,16 @@
-# All the code here and how to build this game 
+# All the code here and how to build this game
 # was used from this youtube video https://www.youtube.com/watch?v=eWRfhZUzrAc
 import random
+
 
 class Card:
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
+
     def __str__(self):
         return f"{self.rank['rank']} of {self.suit}"
+
 
 class Deck:
     def __init__(self):
@@ -44,6 +47,7 @@ class Deck:
                 cards_dealt.append(card)
         return cards_dealt
 
+
 class Hand:
     def __init__(self, dealer=False):
         self.cards = []
@@ -77,7 +81,7 @@ class Hand:
         print(f'''{"Dealer's" if self.dealer else "Your"} Hand:''')
         for index, card in enumerate(self.cards):
             if index == 0 and self.dealer \
-            and not show_all_dealer_cards and not self.is_blackjack():
+                    and not show_all_dealer_cards and not self.is_blackjack():
                 print("hidden")
             else:
                 print(card)
@@ -86,6 +90,7 @@ class Hand:
             print("Value:", self.get_value())
         print()
 
+
 class Game:
     def play(self):
         game_number = 0
@@ -93,7 +98,8 @@ class Game:
 
         while games_to_play <= 0:
             try:
-                games_to_play = int(input("How many games do you want to play?\n"))
+                games_to_play = \
+                 int(input("How many games do you want to play?\n"))
             except ValueError:
                 print("You must enter a number.")
 
@@ -121,11 +127,13 @@ class Game:
                 continue
 
             choice = ""
-            while player_hand.get_value() < 21 and choice not in ["s", "stand"]:
+            while player_hand.get_value() \
+                    < 21 and choice not in ["s", "stand"]:
                 choice = input("Please choose 'Hit' or 'Stand':\n").lower()
                 print()
                 while choice not in ["h", "s", "hit", "stand"]:
-                    choice = input("Please enter 'Hit' or 'Stand' (or H/S):\n").lower()
+                    choice = input("Please enter \
+                    'Hit' or 'Stand' (or H/S):\n").lower()
                     print()
                 if choice in ["hit", "h"]:
                     player_hand.add_card(deck.deal(1))
