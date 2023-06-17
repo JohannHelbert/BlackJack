@@ -1,3 +1,5 @@
+# All the code here and how to build this game 
+# was used from this youtube video https://www.youtube.com/watch?v=eWRfhZUzrAc
 import random
 
 class Card:
