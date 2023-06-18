@@ -46,7 +46,7 @@ After the dealer is done, the final results are decided — if the dealer busts,
 * Play against the computer
 * Accepts user inputs
 
-<img src="assets/images/3.png"
+<img src="assets/images/3.png">
 
 * Input validation and error-checking
 * You cannot enter letters
